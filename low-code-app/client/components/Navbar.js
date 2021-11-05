@@ -2,12 +2,14 @@ import React from 'react';
 // import {connect} from 'react-redux'
 
 import CreateProject from './CreateProject';
+import CreateHome from './CreateHome';
 
 const Navbar = () => (
   <div>
     <h1>Low Code</h1>
     <hr />
     <CreateProject/>
+    <CreateHome/>
   </div>
 );
 
