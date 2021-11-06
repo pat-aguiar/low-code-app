@@ -1,0 +1,1 @@
+export const portName = []; export const technologies = []; export const github = []; export const link = []; export const portDescription = [];

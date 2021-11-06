@@ -1,0 +1,1 @@
+export const name = "Bob"; export const title = "Software Engineer"; export const description = "something";

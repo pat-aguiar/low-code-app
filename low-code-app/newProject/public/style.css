@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+li {
+    display: flex;
+    flex-direction: row ;
+} 
+
+a {
+    text-decoration: none;
+    color: rgb(49, 48, 47);
+    transition: color 0.5s ease;
+}
+
+a:hover {
+    color: #e9c04e;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    height: 100vh;
+    width:100vw;
+    background: linear-gradient(45deg, #eee, #fff);
+    background-attachment: fixed;
+    letter-spacing: 0.15em;
+}
+
+h2 {
+    margin: 0.5em 0;
+}
+
+button.remove {
+    background-color: #ff0000;
+    color: white;
+}
+
+button.remove:hover {
+    background-color: #cc0000;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main > div {
+    width: 50%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 2;
+    margin: 1em;
+}
+
+input {
+    padding: 1em;
+    margin: 0.3em 0;
+    font-size: 1em;
+}
+
+select {
+    padding: 1em;
+    margin: 0.3em 0;
+    font-size: 1em;
+}
+
+button {
+    color: white;
+    background-color: #1f0dbe;
+}
+
+button:hover {
+    background-color: #e9c04e;
+}
+
+button:disabled{
+    background-color: #ccc;
+}

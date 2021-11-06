@@ -2159,11 +2159,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navbar */ "./client/components/Navbar.js");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Home */ "./client/components/Home.js");
+
 
 
 
 const App = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "mainPage"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Home__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -2230,6 +2234,84 @@ const CreateHome = () => {
 
 /***/ }),
 
+/***/ "./client/components/CreatePortfolio.js":
+/*!**********************************************!*\
+  !*** ./client/components/CreatePortfolio.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+
+const CreatePortfolio = () => {
+  const [portName, setPortName] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');
+  const [technologies, setTechnologies] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');
+  const [portDescription, setPortDescription] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');
+  const [github, setGithub] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');
+  const [link, setLink] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');
+
+  const onClick = async () => {
+    await axios__WEBPACK_IMPORTED_MODULE_0___default().post(`/api/create/portfolioData`, {
+      portName: portName,
+      technologies: technologies,
+      portDescription: portDescription,
+      github: github,
+      link: link
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    className: "createHome",
+    value: portName,
+    placeholder: "project name",
+    onChange: ({
+      target
+    }) => setPortName(target.value)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    className: "createHome",
+    value: technologies,
+    placeholder: "technologies",
+    onChange: ({
+      target
+    }) => setTechnologies(target.value)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    className: "createHome",
+    value: github,
+    placeholder: "github link",
+    onChange: ({
+      target
+    }) => setGithub(target.value)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    className: "createHome",
+    value: link,
+    placeholder: "link",
+    onChange: ({
+      target
+    }) => setLink(target.value)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    className: "createHomeD",
+    value: portDescription,
+    placeholder: "description",
+    onChange: ({
+      target
+    }) => setPortDescription(target.value)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
+    onClick: onClick
+  }, " include new project "));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CreatePortfolio);
+
+/***/ }),
+
 /***/ "./client/components/CreateProject.js":
 /*!********************************************!*\
   !*** ./client/components/CreateProject.js ***!
@@ -2244,28 +2326,73 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Home */ "./client/components/Home.js");
+
 
 
 
 const CreateProject = () => {
-  const [fileName, setFileName] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''); //useState is a Hook that allows you to have state variables in functional components
+  const [project, setProject] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''); //useState is a Hook that allows you to have state variables in functional components
 
   const onClick = async () => {
     console.log('in onClick');
     console.log(axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/create'));
-    await axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/create');
-  };
+    await axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/create'); // setProject('true');
+  }; // const onClickFile = async () => {
+  //     await axios.post(`/api/create/file/${fileName}`);
+  // }
 
-  const onClickFile = async () => {
-    await axios__WEBPACK_IMPORTED_MODULE_0___default().post(`/api/create/file/${fileName}`);
-  };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
     onClick: onClick
-  }, " create new project "));
+  }, " create new website "));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CreateProject);
+
+/***/ }),
+
+/***/ "./client/components/Home.js":
+/*!***********************************!*\
+  !*** ./client/components/Home.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _public_images_ProfileImg4_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../public/images/ProfileImg4.jpeg */ "./public/images/ProfileImg4.jpeg");
+
+
+
+const Home = () => {
+  return (
+    /*#__PURE__*/
+    // <div>
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "home"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      className: "singlePimg",
+      src: _public_images_ProfileImg4_jpeg__WEBPACK_IMPORTED_MODULE_1__["default"]
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "homeDetails"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "homeOpng"
+    }, " Hello, my name is "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "homeName"
+    }, " Your Name "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "homeTitle"
+    }, " Your Title "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "homeDescription"
+    }, " Introduce yourself "))) // </div>
+
+  );
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
 
 /***/ }),
 
@@ -2283,16 +2410,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _CreateProject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateProject */ "./client/components/CreateProject.js");
 /* harmony import */ var _CreateHome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CreateHome */ "./client/components/CreateHome.js");
+/* harmony import */ var _CreatePortfolio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CreatePortfolio */ "./client/components/CreatePortfolio.js");
  // import {connect} from 'react-redux'
+// import menu from './../public/image/menu.png';
 
 
 
 
-const Navbar = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+
+const Navbar = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
   className: "navbar"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
   className: "logo"
-}, "Low Code"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateProject__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateHome__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+}, "Low Code"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateProject__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateHome__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreatePortfolio__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar); // /**
 //  * CONTAINER
@@ -2310,6 +2440,21 @@ const Navbar = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createEleme
 //   }
 // }
 // export default connect(mapState, mapDispatch)(Navbar)
+
+/***/ }),
+
+/***/ "./public/images/ProfileImg4.jpeg":
+/*!****************************************!*\
+  !*** ./public/images/ProfileImg4.jpeg ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/ProfileImg4.jpeg");
 
 /***/ }),
 

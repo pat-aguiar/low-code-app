@@ -1,15 +1,22 @@
 import React from 'react';
 // import {connect} from 'react-redux'
+// import menu from './../public/image/menu.png';
 
 import CreateProject from './CreateProject';
 import CreateHome from './CreateHome';
+import CreatePortfolio from './CreatePortfolio';
+
 
 const Navbar = () => (
-  <div className="navbar">
-    <div className="logo">Low Code</div>
-    <hr />
-    <CreateProject/>
-    <CreateHome/>
+  <div>
+    <div className="navbar">
+      {/* <img src= { menu }/> */}
+      <div className="logo">Low Code</div>
+      <hr />
+      <CreateProject/>
+      <CreateHome/>
+      <CreatePortfolio/>
+    </div>
   </div>
 );
 
