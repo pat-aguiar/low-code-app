@@ -16,13 +16,13 @@ const CreateHome = () => {
 
     return (
         <>
-            <input value = { name } placeholder = "name" onChange = {({ target }) => setName(target.value)}/>
+            <input className = "createHome" value = { name } placeholder = "name" onChange = {({ target }) => setName(target.value)}/>
 
-            <input value = { title } placeholder = "title" onChange = {({ target }) => setTitle(target.value)}/>
+            <input className = "createHome" value = { title } placeholder = "title" onChange = {({ target }) => setTitle(target.value)}/>
 
-            <input value = { description } placeholder = "description" onChange = {({ target }) => setDescription(target.value)}/>
+            <input className = "createHomeD" value = { description } placeholder = "description" onChange = {({ target }) => setDescription(target.value)}/>
 
-            <button onClick = { onClick }> click me to create home page </button>
+            <button onClick = { onClick }> create home page </button>
         </>
     )
 };

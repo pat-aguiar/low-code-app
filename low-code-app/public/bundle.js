@@ -2201,18 +2201,21 @@ const CreateHome = () => {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    className: "createHome",
     value: name,
     placeholder: "name",
     onChange: ({
       target
     }) => setName(target.value)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    className: "createHome",
     value: title,
     placeholder: "title",
     onChange: ({
       target
     }) => setTitle(target.value)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    className: "createHomeD",
     value: description,
     placeholder: "description",
     onChange: ({
@@ -2220,7 +2223,7 @@ const CreateHome = () => {
     }) => setDescription(target.value)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
     onClick: onClick
-  }, " click me to create home page "));
+  }, " create home page "));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CreateHome);
@@ -2259,7 +2262,7 @@ const CreateProject = () => {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
     onClick: onClick
-  }, " click me to create a project "));
+  }, " create new project "));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CreateProject);
@@ -2285,7 +2288,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const Navbar = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Low Code"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateProject__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateHome__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+const Navbar = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  className: "navbar"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  className: "logo"
+}, "Low Code"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateProject__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateHome__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar); // /**
 //  * CONTAINER

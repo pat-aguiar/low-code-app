@@ -16,7 +16,7 @@ const CreateProject = () => {
 
     return (
         <>
-            <button onClick = { onClick }> click me to create a project </button>
+            <button onClick = { onClick }> create new project </button>
 
             {/* <input value = { fileName } onChange = {({ target }) => setFileName(target.value)}/>
 

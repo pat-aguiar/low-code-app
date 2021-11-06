@@ -5,8 +5,8 @@ import CreateProject from './CreateProject';
 import CreateHome from './CreateHome';
 
 const Navbar = () => (
-  <div>
-    <h1>Low Code</h1>
+  <div className="navbar">
+    <div className="logo">Low Code</div>
     <hr />
     <CreateProject/>
     <CreateHome/>
