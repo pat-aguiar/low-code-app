@@ -5,17 +5,22 @@ import React from 'react';
 import CreateProject from './CreateProject';
 import CreateHome from './CreateHome';
 import CreatePortfolio from './CreatePortfolio';
+import Download from './Download';
+import Logo from "../../public/images/logo.png";
 
 
 const Navbar = () => (
   <div>
     <div className="navbar">
       {/* <img src= { menu }/> */}
-      <div className="logo">Low Code</div>
+      {/* <div className="logo">Low Code</div> */}
+      <img src={ Logo }/>
       <hr />
       <CreateProject/>
       <CreateHome/>
       <CreatePortfolio/>
+      <a className="download" href='./pack.zip' download> download </a>
+      {/* <Download/> */}
     </div>
   </div>
 );

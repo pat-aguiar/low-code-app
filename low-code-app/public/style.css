@@ -103,7 +103,9 @@ button:disabled{
   width: 800px;
   /* height: 700px; */
   margin: 40px;
-  background-color: #708090;
+  /* background-color: #708090; */
+  /* background-color: #8B0000; */
+  background-color: #2F4F4F;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
   color: #F5FFFA;
@@ -134,3 +136,28 @@ button:disabled{
   font-size: 25px;
 
 }
+
+.download {
+  background-color: #A52A2A;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 525;
+  color: whitesmoke;
+  margin: 15px;
+  margin-top: 6px;;
+  margin-bottom: 0;
+  align-items: center;
+  align-content: center;
+  /* justify-content: center; */
+  padding: 10px;
+  border: none;
+  border-radius: 2px
+}
+
+.download:hover {
+  background-color: #E9967A;
+}
+
+/* button:disabled{
+  background-color: #ccc;
+} */

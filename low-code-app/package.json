@@ -22,7 +22,8 @@
     "file-loader": "^6.2.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.14",
-    "webpack": "^5.62.0"
+    "webpack": "^5.62.0",
+    "zip-local": "^0.3.4"
   },
   "devDependencies": {
     "axios": "^0.24.0",

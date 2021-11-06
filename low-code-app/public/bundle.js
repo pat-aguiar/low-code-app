@@ -2352,6 +2352,51 @@ const CreateProject = () => {
 
 /***/ }),
 
+/***/ "./client/components/Download.js":
+/*!***************************************!*\
+  !*** ./client/components/Download.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+ // import './../../newProject';
+
+class Download extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  downloadEmployeeData = () => {
+    fetch('http://localhost:3000/newProject').then(response => {
+      response.blob().then(blob => {
+        let url = window.URL.createObjectURL(blob);
+        let a = document.createElement('a');
+        a.href = url;
+        a.download = 'newProject';
+        a.click();
+      }); //window.location.href = response.url;
+    });
+  };
+
+  render() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: "container"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      onClick: this.downloadEmployeeData
+    }, "Download"));
+  }
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Download);
+
+/***/ }),
+
 /***/ "./client/components/Home.js":
 /*!***********************************!*\
   !*** ./client/components/Home.js ***!
@@ -2411,6 +2456,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CreateProject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateProject */ "./client/components/CreateProject.js");
 /* harmony import */ var _CreateHome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CreateHome */ "./client/components/CreateHome.js");
 /* harmony import */ var _CreatePortfolio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CreatePortfolio */ "./client/components/CreatePortfolio.js");
+/* harmony import */ var _Download__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Download */ "./client/components/Download.js");
+/* harmony import */ var _public_images_logo_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../public/images/logo.png */ "./public/images/logo.png");
  // import {connect} from 'react-redux'
 // import menu from './../public/image/menu.png';
 
@@ -2418,11 +2465,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 const Navbar = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
   className: "navbar"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-  className: "logo"
-}, "Low Code"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateProject__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateHome__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreatePortfolio__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+  src: _public_images_logo_png__WEBPACK_IMPORTED_MODULE_5__["default"]
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateProject__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreateHome__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CreatePortfolio__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  className: "download",
+  href: "./pack.zip",
+  download: true
+}, " download ")));
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar); // /**
 //  * CONTAINER
@@ -2455,6 +2508,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/ProfileImg4.jpeg");
+
+/***/ }),
+
+/***/ "./public/images/logo.png":
+/*!********************************!*\
+  !*** ./public/images/logo.png ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/logo.png");
 
 /***/ }),
 

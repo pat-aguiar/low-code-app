@@ -2,13 +2,22 @@ const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
+const fs = require('fs');
+var zipper = require('zip-local');
+
 module.exports = app
+
 
 // logging middleware
 app.use(morgan('dev'))
 
 // body parsing middleware
 app.use(express.json())
+
+// dowload
+app.get('/download', async (req, res) => {
+  zipper.sync.zip(path.join(__dirname, '..', 'newProject')).compress().save("pack.zip");
+});
 
 // api route
 app.use('/api', require('./api'))
