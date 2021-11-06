@@ -2,23 +2,27 @@ import axios from 'axios';
 import React, { useState } from 'react';
 
 const CreateHome = () => {
-    const [ fileName, setFileName ] = useState(''); //useState is a Hook that allows you to have state variables in functional components
+    const [ name, setName ] = useState(''); 
+    const [ title, setTitle ] = useState('');
+    const [ description, setDescription ] = useState('');
 
     const onClick = async () => {
-        console.log('in onClick')
-        console.log(axios.post('/api/create'))
-        await axios.post('/api/create');
-    }
-
-    const onClickFile = async () => {
-        await axios.post(`/api/create/file/${fileName}`);
+        await axios.post(`/api/create/homeData`, {
+            name: name,
+            title: title,
+            description: description
+        });
     }
 
     return (
         <>
-            <input value = { fileName } onChange = {({ target }) => setFileName(target.value)}/>
+            <input value = { name } placeholder = "name" onChange = {({ target }) => setName(target.value)}/>
 
-            <button onClick = { onClickFile }> click me to create a file in that directory </button>
+            <input value = { title } placeholder = "title" onChange = {({ target }) => setTitle(target.value)}/>
+
+            <input value = { description } placeholder = "description" onChange = {({ target }) => setDescription(target.value)}/>
+
+            <button onClick = { onClick }> click me to create home page </button>
         </>
     )
 };

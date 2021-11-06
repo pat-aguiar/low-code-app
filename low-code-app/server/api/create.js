@@ -51,10 +51,14 @@ router.post('/', async (req, res, next) => {
 
 // POST /api/create
 // handles -create new file
-router.post('/file/:fileName', async (req, res, next) => {
-    const { fileName } = req.params;
+router.post('/homeData', async (req, res, next) => {
+    const { name, title, description } = req.body;
+
     try {
-      await fs.writeFile(path.join(__dirname, '..', '..', 'test', `${fileName}.js`), 'trying to create a new file', (err) => { console.log(err)})
+      await fs.writeFile(path.join(__dirname, '..', '..', 'newProject', 'homeData.js'), `export const name = ${JSON.stringify(name)}; export const title = ${JSON.stringify(title)}; export const description = ${JSON.stringify(description)};`, (err) => { console.log(err)})
+
+      // NEW PROJECT > SRC > COMPONENTS > Home.js
+      await fs.copyFile(path.join(__dirname, '..', '..', 'lowCode', 'src', 'Home.js'), path.join(__dirname, '..', '..', 'newProject', 'src', 'components', 'Home.js'), null, (err) => { console.log(err)})
     }
     catch (error) {
       next(error);
